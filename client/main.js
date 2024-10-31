@@ -1,6 +1,7 @@
 const a = "hello";
 
 console.log("hi");
+console.log("hello");
 
 const ad = {
   a: 12,
