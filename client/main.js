@@ -1,11 +1,31 @@
-const a = "hello";
+// named export           =>  import { } from '..'
+// default export         =>  import ... from '..'
 
-console.log("hi");
-console.log("hello");
+// import { getNode as $, getNodes } from './lib/dom/getNode.js';
+// import { insertLast } from './lib/dom/insert.js';
 
-const ad = {
-  a: 12,
-  d: 13,
-};
+// import clearContents from "./lib/dom/clearContents.js";
 
-// 웹브라우저 구동
+import { getNode as $, getNodes, typeError, insertLast, clearContents } from "./lib/index.js";
+
+// 1. input 선택하기
+// 2. input 이벤트 바인딩
+// 3. input의 value 값 가져오기
+// 4. 숫자 더하기
+// 5. result에 출력하기
+
+const first = $("#firstNumber");
+const second = $("#secondNumber");
+const result = $(".result");
+
+function handleInput() {
+  const firstValue = Number(first.value);
+  const secondValue = +second.value;
+  const total = firstValue + secondValue;
+
+  clearContents(result);
+  insertLast(result, total);
+}
+
+first.addEventListener("input", handleInput);
+second.addEventListener("input", handleInput);
