@@ -1,3 +1,30 @@
-console.log(process.env.LANG);
 
-// 노드환경에서 돌림
+
+
+const server =  require('live-server');
+
+
+const params = {
+  host:'localhost',
+  port: 3000,
+  open: false,
+  root: './client'
+}
+
+
+server.start(params);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
